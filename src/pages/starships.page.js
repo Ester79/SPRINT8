@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../App.css';
 import NavigationComponent from '../components/navigationComponent';
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -10,30 +11,27 @@ const StarShipsPage = () => {
     const url = 'https://swapi.dev/api';
     const endPointStarships = '/starships/';
 
-
     useEffect(() => {
         fetch(`${url}${endPointStarships}`)
             .then(response => response.json())
             .then(resp => {
-                console.log(resp.results);
                 setStarships(resp.results)
             })
     }, [])
 
+    const navigate = useNavigate();
 
-    const handler = (url, name) => {
-        console.log('url: ', url);
-        console.log('name: ', name);
+    const handler = url => {
+        navigate("/details/", { state: url })
     }
 
     const listItems = starships.map(function (item, index) {
         return (
-            <div key={index} onClick={() => handler((item.url), (item.name))} className='group'>
+            <div key={index} onClick={() => handler((item.url))} className='group'>
                 {item.name} {item.model}
             </div>
         )
     });
-
 
     return (
         <>
@@ -45,8 +43,6 @@ const StarShipsPage = () => {
             </div>
         </>
     )
-
-
 };
 
 export default StarShipsPage;

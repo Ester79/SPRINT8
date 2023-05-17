@@ -5,6 +5,7 @@ import './index.css';
 import App from './App';
 import LoginPage from './pages/login.page';
 import StarShipsPage from './pages/starships.page';
+import DetailStarShipsPage from './pages/detailStarShip.page';
 import reportWebVitals from './reportWebVitals';
 
 
@@ -18,6 +19,7 @@ root.render(
         <Route path="/" element={<App />} />
         <Route path='/login' element={<LoginPage />} />
         <Route path='/starships' element={<StarShipsPage />} />
+        <Route path='/details' element={<DetailStarShipsPage />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

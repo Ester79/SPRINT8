@@ -1,0 +1,28 @@
+.container {
+  margin: 20px;
+}
+
+.group {
+  display: flex;
+  border: 1px solid black;
+  width: 50%;
+  justify-content: center;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.btnLink {
+  background-color: white;
+}
+
+.btnLink:hover {
+  background: red;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  color: black;
+}

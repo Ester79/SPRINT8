@@ -10,6 +10,7 @@ const StarShipsPage = () => {
     const url = 'https://swapi.dev/api';
     const endPointStarships = '/starships/';
 
+
     useEffect(() => {
         fetch(`${url}${endPointStarships}`)
             .then(response => response.json())
@@ -19,18 +20,28 @@ const StarShipsPage = () => {
             })
     }, [])
 
-    const rowwSelected = value => {
-        console.log('fila seleccionada: ', value.target.innerText)
+
+    const handler = (url, name) => {
+        console.log('url: ', url);
+        console.log('name: ', name);
     }
+
+    const listItems = starships.map(function (item, index) {
+        return (
+            <div key={index} onClick={() => handler((item.url), (item.name))} className='group'>
+                {item.name} {item.model}
+            </div>
+        )
+    });
+
 
     return (
         <>
             <NavigationComponent />
-            <div className='container' >
-                {starships.map(starship => <div key={starship.name} onClick={event => rowwSelected(event)} className='group'>
-                    {starship.name}
-                    {starship.model}
-                </div>)}
+            <div>
+                <ul>
+                    {listItems}
+                </ul>
             </div>
         </>
     )

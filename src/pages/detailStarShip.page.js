@@ -12,7 +12,7 @@ const DetailStarShipsPage = () => {
 
     useEffect(() => {
         getDetailsStarshipSelected()
-    })
+    }, [])
 
 
     const getDetailsStarshipSelected = () => {

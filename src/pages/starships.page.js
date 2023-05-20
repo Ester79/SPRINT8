@@ -36,20 +36,19 @@ const StarShipsPage = () => {
     return (
         <>
             <NavigationComponent />
-            <div>
-                <ul>
+            <div className='container'>
+                <ul >
                     {starships.map(function (item, index) {
                         return (
                             <div key={index} onClick={() => handler((item.url))} className='group'>
-                                {item.name} {item.model}
+                                {item.name} - {item.model}
                             </div>
                         )
                     })}
                 </ul>
+                {starships.length < count && <button onClick={incrementPage} className='btnShowMore'><h3>View More</h3></button>
+                }
             </div>
-            {starships.length < count && < button onClick={incrementPage} className='btn btn-primary'>View More</button >
-            }
-
         </>
     )
 };

@@ -2,12 +2,11 @@ import React, { useEffect, useRef, useState } from 'react';
 import '../App.css';
 import NavigationComponent from '../components/navigationComponent';
 import { useLocation } from 'react-router-dom';
-
+import Nave from '../img/spaceship-space-6813986_640..png'
 const DetailStarShipsPage = () => {
 
     const [detail, setDetail] = useState([])
     const location = useLocation();
-
     const urlStarShipSelected = useRef(location.state)
 
     useEffect(() => {
@@ -24,31 +23,30 @@ const DetailStarShipsPage = () => {
             })
     }
 
-
     return (
         <>
             <NavigationComponent />
-            <div className="card mb-3">
-                <h5 className="card-title">{detail.name}</h5>
-                <img src="..." className="card-img-top" alt="..." />
-                <div className="card-body ">
-                    <p className="card-text"><b>MODEL: </b>{detail.model}</p>
-                    <p className="card-text"><b>STARSHIP CLASS: </b>{detail.starship_class}</p>
-                    <p className="card-text"><b>MANUFACTURER: </b>{detail.manufacturer}</p>
-                    <p className="card-text"><b>COST: </b>{detail.cost_in_credits} CREDITS</p>
+            <div className="card mb-3 cardDetail">
+                <h2 className="card-title mt-3 text-center mb-3 force">{detail.name}</h2>
+                <img src={Nave} alt="nave" height={300} className='picture' />
+                <div className="card-body picture ">
+                    <p className="card-text">Model - <b>{detail.model}</b></p>
+                    <p className="card-text">Class - <b>{detail.starship_class}</b></p>
+                    <p className="card-text">Manufacturer - <b>{detail.manufacturer}</b></p>
+                    <p className="card-text">Cost - <b>{detail.cost_in_credits} credits</b></p>
                 </div>
-                <div className='group'>
-                    <div className="card-body">
-                        <p className="card-text"><b>CREW: </b>{detail.crew}</p>
-                        <p className="card-text"><b>PASSENGER CAPACITY: </b>{detail.passengers}</p>
-                        <p className="card-text"><b>CARGO CAPACITY: </b>{detail.cargo_capacity}</p>
-                        <p className="card-text"><b>CONSUMABLES: </b>{detail.consumables}</p>
+                <div className='detailGroup' >
+                    <div className="card-body picture">
+                        <p className="card-text">Crew - <b>{detail.crew}</b></p>
+                        <p className="card-text">Passenger capacity - <b>{detail.passengers}</b></p>
+                        <p className="card-text">Cargo capacity - <b>{detail.cargo_capacity}</b></p>
+                        <p className="card-text">Consumables - <b>{detail.consumables}</b></p>
                     </div>
-                    <div className="card-body">
-                        <p className="card-text"><b>LENGTH: </b>{detail.length} METERS</p>
-                        <p className="card-text"><b>MAXIMUM ATMOSPHERING SPEED: </b>{detail.max_atmosphering_speed} KM/H</p>
-                        <p className="card-text"><b>HYPERDRIVE RATING: </b>{detail.hyperdrive_rating}</p>
-                        <p className="card-text"><b>MAXIMUM SPEED IN REALSPACE: </b>{detail.MGLT} MGLT</p>
+                    <div className="card-body picture">
+                        <p className="card-text">Length - <b>{detail.length} meters</b></p>
+                        <p className="card-text">Maximum atmosphere speed - <b>{detail.max_atmosphering_speed} KM/H</b></p>
+                        <p className="card-text">Hyperdrive rating - <b>{detail.hyperdrive_rating}</b></p>
+                        <p className="card-text">Maximum speed in realspace - <b>{detail.MGLT}</b></p>
                     </div>
                 </div>
 

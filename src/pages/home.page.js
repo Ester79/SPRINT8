@@ -1,9 +1,8 @@
 import React from 'react';
-import { Link } from "react-router-dom";
 import '../App.css';
+import { Link } from "react-router-dom";
 
-
-const NavigationComponent = () => {
+const HomePage = () => {
 
     return (
         <>
@@ -14,11 +13,14 @@ const NavigationComponent = () => {
                     <h1 className="force" id="byline">May The Force Be With You</h1>
                 </div>
                 <div className='buttons'>
-                    <button className='btn btnLink'><Link to='/'>HOME</Link></button>
+                    <button className='btn btnLink'><Link to='/starships'>STARSHIPS</Link></button>
                 </div>
+
             </div>
         </>
     )
+
+
 }
 
-export default NavigationComponent;
+export default HomePage;

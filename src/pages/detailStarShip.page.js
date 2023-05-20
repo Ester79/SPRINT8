@@ -2,7 +2,9 @@ import React, { useEffect, useRef, useState } from 'react';
 import '../App.css';
 import NavigationComponent from '../components/navigationComponent';
 import { useLocation } from 'react-router-dom';
-import Nave from '../img/spaceship-space-6813986_640..png'
+import Nave from '../img/spaceship-space-6813986_640..png';
+import { Link } from "react-router-dom";
+
 const DetailStarShipsPage = () => {
 
     const [detail, setDetail] = useState([])
@@ -25,7 +27,10 @@ const DetailStarShipsPage = () => {
 
     return (
         <>
-            <NavigationComponent />
+            <div className='container buttons pb-3 '>
+                <button className='btn btnLink'><Link to='/'>HOME</Link></button>
+                <button className='btn btnLink'><Link to='/starships'>STARSHIPS</Link></button>
+            </div>
             <div className="card mb-3 cardDetail">
                 <h2 className="card-title mt-3 text-center mb-3 force">{detail.name}</h2>
                 <img src={Nave} alt="nave" height={300} className='picture' />
@@ -49,9 +54,7 @@ const DetailStarShipsPage = () => {
                         <p className="card-text">Maximum speed in realspace - <b>{detail.MGLT}</b></p>
                     </div>
                 </div>
-
             </div>
-
         </>
 
     )

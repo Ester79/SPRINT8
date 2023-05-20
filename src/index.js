@@ -7,6 +7,7 @@ import LoginPage from './pages/login.page';
 import StarShipsPage from './pages/starships.page';
 import DetailStarShipsPage from './pages/detailStarShip.page';
 import reportWebVitals from './reportWebVitals';
+import HomePage from './pages/home.page';
 
 
 
@@ -16,7 +17,7 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App />} />
+        <Route path="/" element={<HomePage />} />
         <Route path='/login' element={<LoginPage />} />
         <Route path='/starships' element={<StarShipsPage />} />
         <Route path='/details' element={<DetailStarShipsPage />} />

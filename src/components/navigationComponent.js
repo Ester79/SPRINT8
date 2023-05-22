@@ -14,7 +14,7 @@ const NavigationComponent = () => {
                     <h1 className="force" id="byline">May The Force Be With You</h1>
                 </div>
                 <div className='buttons'>
-                    <button className='btn btnLink'><Link to='/'>HOME</Link></button>
+                    <button className='btn btnLink'><Link to='/home'>HOME</Link></button>
                 </div>
             </div>
         </>

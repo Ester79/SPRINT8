@@ -1,8 +1,7 @@
 import React from 'react';
-import { BrowserRouter, Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import LoginPage from './pages/login.page';
 import StarShipsPage from './pages/starships.page';
 import DetailStarShipsPage from './pages/detailStarShip.page';
@@ -17,8 +16,8 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path='/login' element={<LoginPage />} />
+        <Route path="/" element={<LoginPage />} />
+        <Route path='/home' element={<HomePage />} />
         <Route path='/starships' element={<StarShipsPage />} />
         <Route path='/details' element={<DetailStarShipsPage />} />
       </Routes>

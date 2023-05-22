@@ -28,7 +28,7 @@ const DetailStarShipsPage = () => {
     return (
         <>
             <div className='container buttons pb-3 '>
-                <button className='btn btnLink'><Link to='/'>HOME</Link></button>
+                <button className='btn btnLink'><Link to='/home'>HOME</Link></button>
                 <button className='btn btnLink'><Link to='/starships'>STARSHIPS</Link></button>
             </div>
             <div className="card mb-3 cardDetail">

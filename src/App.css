@@ -108,10 +108,18 @@ a:visited {
 }
 
 .picture {
-  box-shadow: 0 0 7px #fff,
-    0 0 10px #fff,
-    0 0 11px #fff,
-    0 0 20px #0fa,
-    0 0 21px #0fa;
+
   margin-bottom: 20px;
+}
+
+.containerForm {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+
+}
+
+.formLogin {
+  padding-top: 40px;
+  width: 50%;
 }

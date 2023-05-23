@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 import Nave from '../img/spaceship-space-6813986_640..png';
 import { Link } from "react-router-dom";
 import PilotsComponent from '../components/pilotsComponent';
+import FilmsComponent from '../components/filmsComponent';
 
 const DetailStarShipsPage = () => {
 
@@ -60,6 +61,9 @@ const DetailStarShipsPage = () => {
                 </div>
                 <div className='detailGroup'>
                     {showPilots && detail.pilots.map((pilot, index) => <PilotsComponent key={index} pilot={pilot} />)}
+                </div>
+                <div className='detailGroup'>
+                    {showPilots && detail.films.map((film, index) => <FilmsComponent key={index} film={film} />)}
                 </div>
 
 

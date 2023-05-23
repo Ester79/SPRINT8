@@ -17,8 +17,7 @@ const PilotsComponent = ({ pilot }) => {
     return (
         <>
             <div className='card-body picture'>
-                <p><b>PILOT</b></p>
-                <p> {pilotName}</p>
+                <p>Pilot: <b>{pilotName}</b> </p>
                 <img src={Chewbacca} alt='chewbacca' height={90} />
             </div>
         </>

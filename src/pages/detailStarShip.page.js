@@ -1,13 +1,14 @@
 import React, { useEffect, useRef, useState } from 'react';
 import '../App.css';
-import NavigationComponent from '../components/navigationComponent';
 import { useLocation } from 'react-router-dom';
 import Nave from '../img/spaceship-space-6813986_640..png';
 import { Link } from "react-router-dom";
+import PilotsComponent from '../components/pilotsComponent';
 
 const DetailStarShipsPage = () => {
 
     const [detail, setDetail] = useState([])
+    const [showPilots, setShowPilots] = useState(false)
     const location = useLocation();
     const urlStarShipSelected = useRef(location.state)
 
@@ -22,6 +23,9 @@ const DetailStarShipsPage = () => {
             .then(resp => {
                 console.log('detalle: ', resp)
                 setDetail(resp)
+                if (resp.pilots !== [] || resp.pilots !== null || !resp.pilots) {
+                    setShowPilots(true)
+                }
             })
     }
 
@@ -54,6 +58,11 @@ const DetailStarShipsPage = () => {
                         <p className="card-text">Maximum speed in realspace - <b>{detail.MGLT}</b></p>
                     </div>
                 </div>
+                <div className='detailGroup'>
+                    {showPilots && detail.pilots.map((pilot, index) => <PilotsComponent key={index} pilot={pilot} />)}
+                </div>
+
+
             </div>
         </>
 
